@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
+    /*"baseUrl": "./",*/
     "target": "esnext",
     "module": "nodenext",
     "rootDir": "./src",
@@ -8,7 +8,10 @@
     "strict": true,
     "moduleResolution": "nodenext",
     "esModuleInterop": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "paths": {
+      "*": ["./*"]
+    }
   },
   "include": ["./src/**/*.ts"],
   "exclude": ["node_modules"]
