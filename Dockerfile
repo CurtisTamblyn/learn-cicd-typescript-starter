@@ -4,7 +4,8 @@ WORKDIR /usr/src/app
 
 ADD . .
 
-RUN npm ci
+#RUN npm ci --skip-integrity-check
+RUN npm install
 
 RUN npm run build
 
