@@ -7,20 +7,19 @@ const person = {
 };
 
 describe("api auth", () => {
+  test("Get API Key from headers", () => {
+    const headers = { authorization: "ApiKey test" };
+    const result = getAPIKey(headers);
 
-    test("Get API Key from headers", () => {
-        const headers = { "authorization": "ApiKey test"}
-        const result = getAPIKey(headers);
+    expect(result).toBe("test");
+  });
 
-        expect(result).toBe("test");
-    });
-
-    test("No API Key from headers to retrieve", () => {
-        const headers = {};
-        const result = getAPIKey(headers);
-        expect(result).toBeNull();
-    })
-})
+  test("No API Key from headers to retrieve", () => {
+    const headers = {};
+    const result = getAPIKey(headers);
+    expect(result).toBeNull();
+  });
+});
 
 describe("person", () => {
   test("person is defined", () => {
